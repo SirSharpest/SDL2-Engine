@@ -14,51 +14,50 @@
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
+ 
+//The window we'll be rendering to
+SDL_Window* g_pWindow = 0;
+SDL_Renderer* g_pRenderer = 0; 
 
-int main( int argc, char* args[] )
-{
-    //The window we'll be rendering to
-    SDL_Window* window = NULL;
-
-    //The surface contained by the window
-    SDL_Surface* screenSurface = NULL;
-
-    //Initialize SDL
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-    {
-        printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
-    }
-    else
-    {
-        //Create window
-        window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
-         SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-
-        if( window == NULL )
-        {
-            printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError() );
-        }
-        else
-        {
-            //Get window surface
-            screenSurface = SDL_GetWindowSurface( window );
-
-            //Fill the surface white
-            SDL_FillRect( screenSurface, NULL, SDL_MapRGB( screenSurface->format, 0xFF, 0xFF, 0xFF ) );
-
-            //Update the surface
-            SDL_UpdateWindowSurface( window );
-
-            //Wait two seconds
-            SDL_Delay( 2000 );
-        }
-    }
-
-    //Destroy window
-    SDL_DestroyWindow( window );
-
-    //Quit SDL subsystems
-    SDL_Quit();
-
-    return 0;
+    
+int main( int argc, char* args[] ){
+   
+   //init SDL (Doing all for now so not to have to init all elements) 
+   if(SDL_Init(SDL_INIT_EVERYTHING) >= 0){
+   
+		   	//If success then create the window! 
+		   	g_pWindow = SDL_CreateWindow("SDL",SDL_WINDOWPOS_CENTERED, 
+		   	SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		   	
+		   	//if the window creation succeeded create the renderer 
+		   	if(g_pWindow != 0){
+		   		
+		   			g_pRenderer = SDL_CreateRenderer(g_pWindow, -1,0); 
+		   		
+		   	}
+		   	else{
+		   			return 1; //failed at init
+		   	}
+   } 
+   
+   //at this stage everything should have worked, and now the window can be drawn to screen
+   
+   //this is used to fill the screen and make it black
+   SDL_SetRenderDrawColor(g_pRenderer, 0, 0, 0, 255);   
+   
+   //clear the window to the black indicated above
+   SDL_RenderClear(g_pRenderer); 
+   
+   //show the window
+   SDL_RenderPresent(g_pRenderer); 
+   
+   //delay the screen 
+   SDL_Delay(5000); 
+   
+   //clean up and exit
+   SDL_Quit(); 
+   
+   
+   
+   return 0;
 }
