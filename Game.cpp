@@ -8,6 +8,9 @@
 bool Game::init(const char *title, int xpos, int ypos,
                 int height, int width, int flags) {
 
+
+
+
     //init SDL (Doing all for now so not to have to init all elements)
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 
@@ -22,8 +25,8 @@ bool Game::init(const char *title, int xpos, int ypos,
 
             //if the renderer was created
             if(m_pRenderer != 0){
-                SDL_SetRenderDrawColor(m_pRenderer, 255, 255
-                ,255,255);
+                SDL_SetRenderDrawColor(m_pRenderer, 0, 0
+                ,0,255);
             }
             else{
                 //renderer has failed
@@ -42,6 +45,27 @@ bool Game::init(const char *title, int xpos, int ypos,
     //start the main loop
     m_bRunning = true;
 
+    //image loading stuff
+    SDL_Surface* pTempSurface = SDL_LoadBMP("resources/images/hello_world.bmp");
+    if(pTempSurface == NULL){return false;}
+    m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer,
+                                              pTempSurface);
+
+    SDL_FreeSurface(pTempSurface);
+
+    SDL_QueryTexture(m_pTexture, NULL, NULL,
+                     &m_sourceRectangle.w, &m_sourceRectangle.h);
+
+    m_destinationRectangle.x = m_sourceRectangle.x = 0;
+    m_destinationRectangle.y = m_sourceRectangle.y = 0;
+    m_destinationRectangle.w = m_sourceRectangle.w;
+    m_destinationRectangle.h = m_sourceRectangle.h;
+
+    //end of image stuff
+
+
+
+
     return true;
 
 }
@@ -50,6 +74,10 @@ void Game::render(){
 
     //clear the renderer
     SDL_RenderClear(m_pRenderer);
+
+    //image loads here
+    SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle,
+    &m_destinationRectangle);
 
     //draw to screen
     SDL_RenderPresent(m_pRenderer);

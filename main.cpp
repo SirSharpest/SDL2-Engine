@@ -13,8 +13,8 @@
 #include "Game.h"
 
 //Screen dimension constants
-const int WINDOW_WIDTH = 640;
-const int WINDOW_HEIGHT = 480;
+const int WINDOW_WIDTH = 1024;
+const int WINDOW_HEIGHT = 720;
 
 
 //Game object

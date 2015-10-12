@@ -27,15 +27,21 @@ public:
     //a function to access the private running variable
     bool running() {return m_bRunning;}
 
+
+
 private:
 
     //The window we'll be rendering to
     SDL_Window *m_pWindow;
     SDL_Renderer *m_pRenderer;
 
+    //Image and texture pointers and variables
+    SDL_Texture* m_pTexture; // new SDL_Texture
+    SDL_Rect m_sourceRectangle; // the first rectangle
+    SDL_Rect m_destinationRectangle; //another rectangle
+
+
     bool m_bRunning;
-
-
 
 };
 
