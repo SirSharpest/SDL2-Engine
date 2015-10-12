@@ -20,7 +20,7 @@ public:
               int height, int width, int flags);
 
     void render();
-    void update(){}
+    void update();
     void handleEvents();
     void clean();
 

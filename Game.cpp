@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include <SDL.h>
+#include <SDL_image.h>
 
 bool Game::init(const char *title, int xpos, int ypos,
                 int height, int width, int flags) {
@@ -46,15 +47,17 @@ bool Game::init(const char *title, int xpos, int ypos,
     m_bRunning = true;
 
     //image loading stuff
-    SDL_Surface* pTempSurface = SDL_LoadBMP("resources/images/hello_world.bmp");
+    SDL_Surface* pTempSurface = IMG_Load("resources/images/scottRunning.png");
     if(pTempSurface == NULL){return false;}
     m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer,
                                               pTempSurface);
 
     SDL_FreeSurface(pTempSurface);
 
-    SDL_QueryTexture(m_pTexture, NULL, NULL,
-                     &m_sourceRectangle.w, &m_sourceRectangle.h);
+    m_sourceRectangle.w = 108;
+    m_sourceRectangle.h = 140;
+
+
 
     m_destinationRectangle.x = m_sourceRectangle.x = 0;
     m_destinationRectangle.y = m_sourceRectangle.y = 0;
@@ -76,11 +79,24 @@ void Game::render(){
     SDL_RenderClear(m_pRenderer);
 
     //image loads here
-    SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle,
-    &m_destinationRectangle);
+
+    //Display normal
+    //SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle,
+    //&m_destinationRectangle);
+
+    //Flipped display
+    SDL_RenderCopyEx(m_pRenderer, m_pTexture,
+    &m_sourceRectangle, &m_destinationRectangle, 0,0,
+    SDL_FLIP_HORIZONTAL);
 
     //draw to screen
     SDL_RenderPresent(m_pRenderer);
+
+}
+
+void Game::update() {
+
+    m_sourceRectangle.x = 108 * int(((SDL_GetTicks() / 100) % 6));
 
 }
 
