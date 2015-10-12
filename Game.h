@@ -6,6 +6,7 @@
 #define SDL2_GAME_H
 
 #include <SDL.h>
+#include "TextureManager.h"
 
 
 class Game {
@@ -35,12 +36,11 @@ private:
     SDL_Window *m_pWindow;
     SDL_Renderer *m_pRenderer;
 
-    //Image and texture pointers and variables
-    SDL_Texture* m_pTexture; // new SDL_Texture
-    SDL_Rect m_sourceRectangle; // the first rectangle
-    SDL_Rect m_destinationRectangle; //another rectangle
 
 
+    int m_currentFrame;
+
+    TextureManager m_textureManager;
     bool m_bRunning;
 
 };

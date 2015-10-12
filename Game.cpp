@@ -42,29 +42,15 @@ bool Game::init(const char *title, int xpos, int ypos,
         return false; // SDL init has failed
     }
 
+
+    //load textures
+    m_textureManager.load("resources/images/scottRunning.png", "runningScott", m_pRenderer);
+
     //if it gets to here, then all is well
     //start the main loop
     m_bRunning = true;
 
-    //image loading stuff
-    SDL_Surface* pTempSurface = IMG_Load("resources/images/scottRunning.png");
-    if(pTempSurface == NULL){return false;}
-    m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer,
-                                              pTempSurface);
 
-    SDL_FreeSurface(pTempSurface);
-
-    m_sourceRectangle.w = 108;
-    m_sourceRectangle.h = 140;
-
-
-
-    m_destinationRectangle.x = m_sourceRectangle.x = 0;
-    m_destinationRectangle.y = m_sourceRectangle.y = 0;
-    m_destinationRectangle.w = m_sourceRectangle.w;
-    m_destinationRectangle.h = m_sourceRectangle.h;
-
-    //end of image stuff
 
 
 
@@ -78,16 +64,9 @@ void Game::render(){
     //clear the renderer
     SDL_RenderClear(m_pRenderer);
 
-    //image loads here
-
-    //Display normal
-    //SDL_RenderCopy(m_pRenderer, m_pTexture, &m_sourceRectangle,
-    //&m_destinationRectangle);
-
-    //Flipped display
-    SDL_RenderCopyEx(m_pRenderer, m_pTexture,
-    &m_sourceRectangle, &m_destinationRectangle, 0,0,
-    SDL_FLIP_HORIZONTAL);
+    //texture loads here
+    m_textureManager.draw("runningScott", 0, 0, 108, 140, m_pRenderer);
+    m_textureManager.drawFrame("runningScott",200, 200, 108, 140,1, m_currentFrame, m_pRenderer);
 
     //draw to screen
     SDL_RenderPresent(m_pRenderer);
@@ -96,7 +75,7 @@ void Game::render(){
 
 void Game::update() {
 
-    m_sourceRectangle.x = 108 * int(((SDL_GetTicks() / 100) % 6));
+    m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
 
 }
 

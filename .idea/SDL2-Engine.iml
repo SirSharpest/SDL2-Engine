@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Game.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Game.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TextureManager.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TextureManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2_image.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2_ttf.cmake" isTestSource="false" />
