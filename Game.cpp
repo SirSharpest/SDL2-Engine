@@ -5,6 +5,7 @@
 #include "Game.h"
 #include <SDL.h>
 #include <SDL_image.h>
+#include "TextureManager.h"
 
 bool Game::init(const char *title, int xpos, int ypos,
                 int height, int width, int flags) {
@@ -44,7 +45,8 @@ bool Game::init(const char *title, int xpos, int ypos,
 
 
     //load textures
-    m_textureManager.load("resources/images/scottRunning.png", "runningScott", m_pRenderer);
+    TheTextureManager::Instance()->load("resources/images/scottRunning.png",
+                                        "runningScott", m_pRenderer);
 
     //if it gets to here, then all is well
     //start the main loop
@@ -64,9 +66,11 @@ void Game::render(){
     //clear the renderer
     SDL_RenderClear(m_pRenderer);
 
-    //texture loads here
-    m_textureManager.draw("runningScott", 0, 0, 108, 140, m_pRenderer);
-    m_textureManager.drawFrame("runningScott",200, 200, 108, 140,1, m_currentFrame, m_pRenderer);
+    //textures are drawn here
+    TheTextureManager::Instance()->draw("runningScott", 0, 0,
+                                        108, 140, m_pRenderer);
+    TheTextureManager::Instance()->drawFrame("runningScott",200, 200,
+                                             108, 140,1, m_currentFrame, m_pRenderer);
 
     //draw to screen
     SDL_RenderPresent(m_pRenderer);

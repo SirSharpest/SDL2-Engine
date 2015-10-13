@@ -40,7 +40,7 @@ private:
 
     int m_currentFrame;
 
-    TextureManager m_textureManager;
+
     bool m_bRunning;
 
 };
