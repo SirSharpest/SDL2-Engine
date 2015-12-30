@@ -5,7 +5,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SDL2_SOURCE_DIR}/cmake")
 
 
-set(SOURCE_FILES main.cpp Game.cpp Game.h TextureManager.cpp TextureManager.h)
+set(SOURCE_FILES source/src/main.cpp source/src/graphics.cpp source/headers/graphics.h source/src/game.cpp source/headers/game.h source/headers/input.h source/src/input.cpp)
 add_executable(SDL2 ${SOURCE_FILES})
 
 find_package(SDL2 REQUIRED)

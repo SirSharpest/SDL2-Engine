@@ -2,30 +2,31 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Game.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Game.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TextureManager.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TextureManager.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2_image.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cmake/FindSDL2_ttf.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/input.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/graphics.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/game.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/game.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/graphics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/input.h" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>
