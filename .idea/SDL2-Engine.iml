@@ -10,11 +10,12 @@
       <sourceFolder url="file://$MODULE_DIR$/source/src/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/game.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/graphics.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/headers/input.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/sprite.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/headers/graphics.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/headers/game.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/headers/sprite.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/game.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/globals.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/graphics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/input.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

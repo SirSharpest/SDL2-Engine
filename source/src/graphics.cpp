@@ -4,11 +4,12 @@
 
 #include "../headers/graphics.h"
 #include <SDL2/SDL_image.h>
+#include "../headers/globals.h"
 
 Graphics::Graphics() {
 
     //TODO Const these widths and widths
-    SDL_CreateWindowAndRenderer(640, 480, 0, &this->_window, &this->_renderer);
+    SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->_window, &this->_renderer);
     SDL_SetWindowTitle(this->_window, "SDL Engine");
 }
 
