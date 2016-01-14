@@ -2,8 +2,9 @@
 // Created by nathan on 21/12/15.
 //
 
-#ifndef SDL2_GAME_H
-#define SDL2_GAME_H
+#pragma once
+
+#include "sprite.h"
 
 //Forward declaring graphics
 class Graphics;
@@ -19,8 +20,9 @@ private:
     void draw(Graphics &graphics);
     void update(float elapsedTime);
 
+    Sprite _player;
 
 };
 
 
-#endif //SDL2_GAME_H
+
