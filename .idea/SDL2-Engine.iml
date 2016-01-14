@@ -8,25 +8,27 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/input.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/src/graphics.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/src/game.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/headers/game.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/source/headers/graphics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/graphics.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source/headers/input.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/src/sprite.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/graphics.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/game.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source/headers/sprite.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include" />
           <root url="file:///usr/local/include" />
         </CLASSES>
         <SOURCES>
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
           <root url="file:///usr/include" />
+          <root url="file:///usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include" />
           <root url="file:///usr/local/include" />
         </SOURCES>
       </library>
